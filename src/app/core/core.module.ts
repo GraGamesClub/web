@@ -1,18 +1,23 @@
-import {NgModule} from '@angular/core';
+import {NgModule, Optional, SkipSelf} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MaterialModule} from '../shared/material.module';
-import {AppRoutingModule} from '../app-routing.module';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {ToolbarComponent, TopComponent} from './components';
+import {BrowserModule} from '@angular/platform-browser';
+import {throwIfAlreadyLoaded} from './module-import-guard';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
-    AppRoutingModule,
-    FlexLayoutModule
+    BrowserModule,
+    FlexLayoutModule,
   ],
-  declarations: [ToolbarComponent],
-  exports: [ToolbarComponent]
+  declarations: [ToolbarComponent, TopComponent],
+  exports: [CommonModule, BrowserModule, MaterialModule, ToolbarComponent, TopComponent]
 })
-export class CoreModule { }
+export class CoreModule {
+  constructor( @Optional() @SkipSelf() parentModule: CoreModule ) {
+    throwIfAlreadyLoaded(parentModule, 'CoreModule');
+  }
+}

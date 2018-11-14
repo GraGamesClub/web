@@ -1,31 +1,15 @@
-<mat-toolbar color="primary" class="crm-toolbar-fixed">
-
+<mat-toolbar color="primary" class="web-toolbar-fixed">
   <mat-toolbar-row>
-
-    <span class="crm-toolbar-title">GRA GAMES CLUB</span>
-
-    <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
-
-      <ul fxLayout fxLayoutGap="20px" class="crm-navigation-items">
-        <li>
-          <a>
-            <mat-icon class="crm-toolbar-icon">settings</mat-icon>
-          </a>
-        </li>
-        <li>
-          <a >
-            <mat-icon class="crm-toolbar-icon">help_outline</mat-icon>
-          </a>
-        </li>
-        <li>
-          <a>
-            <mat-icon class="crm-toolbar-icon">person_outline</mat-icon>
-          </a>
-        </li>
-      </ul>
-
+    <span class="web-toolbar-title">GRA GAMES CLUB</span>
+    <div class="web-hide-small">
+      <a mat-button href="#about">About</a>
+      <a mat-button href="#events">Events</a>
+      <a mat-button href="#contacts">Contacts</a>
     </div>
-
   </mat-toolbar-row>
-
+  <mat-toolbar-row class="web-show-small">
+    <a mat-button href="#about">About</a>
+    <a mat-button href="#events">Events</a>
+    <a mat-button href="#contacts">Contacts</a>
+  </mat-toolbar-row>
 </mat-toolbar>

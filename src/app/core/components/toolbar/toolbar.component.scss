@@ -1,12 +1,12 @@
 // https://material.angular.io/guide/theming-your-components
 
-$crm-toolbar-height-desktop: 64px !default;
-$crm-toolbar-height-mobile: 56px !default;
-$crm-toolbar-row-padding: 16px !default;
+$web-toolbar-height-desktop: 64px !default;
+$web-toolbar-height-mobile: 56px !default;
+$web-toolbar-row-padding: 16px !default;
 
-$crm-toolbar-title-padding: 16px !default;
+$web-toolbar-title-padding: 16px !default;
 
-.crm-toolbar-fixed {
+.web-toolbar-fixed {
   position: fixed;
   top: 0;
   left: 0;
@@ -14,11 +14,11 @@ $crm-toolbar-title-padding: 16px !default;
   z-index: 998;  // 2
 }
 
-.crm-toolbar-title {
-  margin: 0 $crm-toolbar-title-padding 0 $crm-toolbar-title-padding;
+.web-toolbar-title {
+  margin: 0 $web-toolbar-title-padding 0 $web-toolbar-title-padding;
 }
 
-.crm-toolbar-icon {
+.web-toolbar-icon {
   display: inline-block;
   height: 30px;
   margin: 0 auto;
@@ -28,13 +28,20 @@ $crm-toolbar-title-padding: 16px !default;
   width: 15%;
 }
 
-.crm-navigation-items {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-}
-
 * {
   color: white;
+}
+
+.web-show-small {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .web-hide-small {
+    display: none;
+  }
+
+  .web-show-small {
+    display: block;
+  }
 }
